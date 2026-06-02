@@ -12,6 +12,8 @@ import { motion } from 'motion/react';
 import { Menu, X } from 'lucide-react';
 import { useState, useEffect } from 'react';
 
+const RESUME_URL = '/resume.pdf';
+
 const navLinks = [
   { name: 'Home', href: '#home' },
   { name: 'About', href: '#about' },
@@ -67,7 +69,9 @@ export default function Header() {
             </motion.a>
           ))}
           <motion.a
-            href="#resume"
+            href={RESUME_URL}
+            target="_blank"
+            rel="noreferrer"
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             className="px-5 py-2 rounded-full border border-zinc-700 text-sm font-medium text-white hover:bg-white hover:text-black transition-all"
@@ -100,7 +104,9 @@ export default function Header() {
             </a>
           ))}
           <a
-            href="#resume"
+            href={RESUME_URL}
+            target="_blank"
+            rel="noreferrer"
             onClick={() => setIsOpen(false)}
             className="text-lg text-white font-bold"
           >

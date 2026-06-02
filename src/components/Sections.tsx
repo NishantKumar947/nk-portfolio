@@ -3,6 +3,8 @@ import { EDUCATION, EXPERIENCES, PROJECTS, SKILL_CATEGORIES } from '../constants
 import { Github, Mail, Linkedin, Send, Download, GraduationCap, Calendar } from 'lucide-react';
 import { motion } from 'motion/react';
 
+const RESUME_URL = '/resume.pdf';
+
 export function About() {
   return (
     <Section id="about" title="About Me">
@@ -289,7 +291,8 @@ export function Resume() {
         </p>
 
         <a
-          href="/resume.pdf"
+          href={RESUME_URL}
+          download="Nishant_Resume.pdf"
           target="_blank"
           rel="noreferrer"
           className="flex items-center py-4 px-10 bg-white text-black rounded-full font-bold hover:bg-zinc-300 transition-all group"

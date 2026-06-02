@@ -9,6 +9,8 @@ const roles = [
   "Web Developer"
 ];
 
+const RESUME_URL = '/resume.pdf';
+
 export default function Hero() {
   const [index, setIndex] = useState(0);
 
@@ -93,7 +95,9 @@ export default function Hero() {
             <ChevronRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
           </a>
           <a 
-            href="https://drive.google.com/file/d/1rVNKPCBRAclbq1E6p5H7YDf6KpOj7ehS/view?usp=drive_link" 
+            href={RESUME_URL}
+            target="_blank"
+            rel="noreferrer"
             className="flex items-center px-10 py-4 bg-[#1e293b]/40 text-white font-bold rounded-full border border-slate-700/50 hover:bg-[#1e293b]/60 transition-all w-full sm:w-auto justify-center backdrop-blur-sm shadow-xl shadow-black/20"
           >
             <Download className="mr-2 w-5 h-5" />
