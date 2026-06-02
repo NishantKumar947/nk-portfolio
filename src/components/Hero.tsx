@@ -74,9 +74,9 @@ export default function Hero() {
           transition={{ delay: 0.2 }}
           className="text-lg md:text-2xl text-slate-400 mb-12 max-w-3xl mx-auto leading-relaxed font-light px-4"
         >
-          Specializing in <span className="text-white/90 font-normal">robust software architectures</span>, 
-          <span className="text-white/90 font-normal"> data-driven decision systems</span>, and 
-          <span className="text-white/90 font-normal"> user-centric digital experiences</span>.
+          Specializing in <span className="text-white/90 font-normal">scalable Python solutions</span>, 
+          <span className="text-white/90 font-normal"> data-driven decision insights</span>, and 
+          <span className="text-white/90 font-normal"> crafting modern web applications</span>.
         </motion.p>
 
         <motion.div 

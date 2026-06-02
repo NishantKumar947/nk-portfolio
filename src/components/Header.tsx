@@ -1,3 +1,13 @@
+/** @jsxRuntime classic */
+/** @jsx React.createElement */
+declare module "react";
+declare namespace JSX {
+  interface Element { }
+  interface IntrinsicElements {
+    [key: string]: any;
+  }
+}
+import * as React from 'react';
 import { motion } from 'motion/react';
 import { Menu, X } from 'lucide-react';
 import { useState, useEffect } from 'react';
@@ -23,13 +33,12 @@ export default function Header() {
   }, []);
 
   return (
-    <nav 
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled ? 'bg-zinc-950/80 backdrop-blur-md py-4 border-b border-zinc-800' : 'bg-transparent py-6'
-      }`}
+    <nav
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? 'bg-zinc-950/80 backdrop-blur-md py-4 border-b border-zinc-800' : 'bg-transparent py-6'
+        }`}
     >
       <div className="max-w-7xl mx-auto px-6 md:px-12 flex justify-between items-center">
-        <motion.a 
+        <motion.a
           href="#home"
           initial={{ opacity: 0, x: -20 }}
           animate={{ opacity: 1, x: 0 }}
@@ -75,23 +84,23 @@ export default function Header() {
 
       {/* Mobile Nav */}
       {isOpen && (
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           className="md:hidden absolute top-full left-0 right-0 bg-zinc-950 border-b border-zinc-800 p-6 flex flex-col space-y-4"
         >
           {navLinks.map((link) => (
-            <a 
-              key={link.name} 
-              href={link.href} 
+            <a
+              key={link.name}
+              href={link.href}
               onClick={() => setIsOpen(false)}
               className="text-lg text-zinc-400 hover:text-white"
             >
               {link.name}
             </a>
           ))}
-          <a 
-            href="#resume" 
+          <a
+            href="#resume"
             onClick={() => setIsOpen(false)}
             className="text-lg text-white font-bold"
           >

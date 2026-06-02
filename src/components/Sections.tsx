@@ -21,25 +21,20 @@ export function About() {
               alt="Nishant Kumar"
               className="w-full h-full object-cover"
             />
-
-            {/* <span className="text-9xl font-black text-white/5 select-none tracking-tighter">NK</span>
-            <div className="absolute flex flex-col items-center">
-              <span className="text-4xl font-bold text-white tracking-widest leading-none">NISHANT</span>
-              <span className="text-4xl font-light text-slate-500 tracking-widest leading-none">KUMAR</span>
-            </div> */}
           </div>
         </motion.div>
 
         <div className="space-y-8">
           <div className="space-y-4">
             <h3 className="text-3xl md:text-4xl font-bold text-white tracking-tight leading-tight">
-              Bridging the gap between <span className="text-slate-500 italic font-light">data</span> and{' '}
-              <span className="text-slate-500 italic font-light">deployment</span>.
+              Bridging development, <span className="text-slate-500 italic font-light">and</span> {' '}
+              real-world solutions.
             </h3>
             <p className="text-slate-400 text-lg md:text-xl leading-relaxed font-light">
-              I am an early-career technologist with a dual passion for building
-              <span className="text-white font-normal"> scalable cloud software</span> and uncovering
-              <span className="text-white font-normal"> meaningful insights</span> from massive datasets.
+              I enjoy building things that actually
+              <span className="text-white font-normal"> solve problems.</span> Whether it’s working with
+              <span className="text-white font-normal"> data, writing backend logic,</span> or <span className="text-white font-normal">creating web interfaces.</span> I focus on keeping things
+              <span className="text-white font-normal"> simple, practical,</span>  and <span className="text-white font-normal">useful.</span>
             </p>
           </div>
 
@@ -48,7 +43,7 @@ export function About() {
               <div className="w-12 h-1 bg-white" />
               <h4 className="text-white font-semibold flex items-center gap-2">Development</h4>
               <p className="text-slate-500 text-sm leading-relaxed">
-                Crafting robust Python backends and modern web interfaces using modern frameworks.
+                Building applications using Python and modern web technologies like React and Node.js.
               </p>
             </div>
 
@@ -56,7 +51,7 @@ export function About() {
               <div className="w-12 h-1 bg-slate-700" />
               <h4 className="text-white font-semibold">Analytics</h4>
               <p className="text-slate-500 text-sm leading-relaxed">
-                Transforming raw data into strategic business intelligence using advanced analysis techniques.
+                Working with data using SQL and Python to find insights and create simple, useful dashboards.
               </p>
             </div>
           </div>
@@ -73,44 +68,57 @@ export function Experience() {
       title="Work Experience"
       subtitle="A record of professional contributions where I've applied technical solutions to business challenges."
     >
-      <div className="flex flex-col gap-8">
+      <div className="grid md:grid-cols-2 gap-8">
         {EXPERIENCES.map((exp, i) => (
-          <Card key={exp.id} delay={i * 0.15} className="group overflow-hidden relative">
-            <div className="absolute top-0 right-0 p-8 opacity-[0.03] group-hover:opacity-[0.08] transition-opacity pointer-events-none">
-              <span className="text-7xl font-black italic tracking-tighter text-white">{i + 1}</span>
+          <Card key={exp.id} delay={i * 0.15} className="group relative overflow-hidden h-full flex flex-col justify-between">
+
+            {/* 1. Background Index Number (Fixed Tag Closing Here) */}
+            <div className="absolute top-0 right-0 p-8 opacity-[0.03] group-hover:opacity-[0.08] transition-opacity pointer-events-none select-none">
+              <span className="text-7xl font-black italic tracking-tighter text-white">
+                {i + 1}
+              </span>
             </div>
 
-            <div className="flex flex-col lg:flex-row lg:items-start gap-8 relative z-10">
-              <div className="lg:w-1/4">
-                <div className="inline-block px-3 py-1 rounded-full bg-slate-800/50 border border-slate-700/50 mb-4">
+            {/* 2. Main Content Wrapper */}
+            <div className="relative z-10 flex flex-col h-full p-6 md:p-8">
+
+              {/* Top Bar: Period and Duration */}
+              <div className="flex flex-wrap items-center gap-3 mb-6">
+                <div className="inline-block px-3 py-1 rounded-full bg-slate-800/50 border border-slate-700/50">
                   <span className="text-[10px] uppercase font-bold tracking-widest text-slate-300">
                     {exp.period}
                   </span>
                 </div>
-                <p className="text-xs text-slate-500 font-bold uppercase tracking-widest">{exp.duration}</p>
+                <p className="text-xs text-slate-500 font-bold uppercase tracking-widest">
+                  {exp.duration}
+                </p>
               </div>
 
-              <div className="flex-1 space-y-4">
-                <div className="space-y-1">
-                  <h3 className="text-2xl md:text-3xl font-bold text-white group-hover:text-blue-200 transition-colors">
-                    {exp.role}
-                  </h3>
-                  <p className="text-lg text-slate-400 font-light tracking-wide">{exp.company}</p>
-                </div>
-
-                <p className="text-slate-400 text-lg leading-relaxed max-w-3xl">{exp.description}</p>
-
-                <div className="flex flex-wrap gap-2 pt-4">
-                  {exp.skills.map((skill) => (
-                    <span
-                      key={skill}
-                      className="px-3 py-1 bg-white/5 text-slate-400 text-xs font-medium rounded-md border border-slate-800 group-hover:border-slate-700/50 group-hover:text-slate-200 transition-all duration-300"
-                    >
-                      {skill}
-                    </span>
-                  ))}
-                </div>
+              {/* Middle Section: Title and Description */}
+              <div className="space-y-3 mb-6 flex-grow">
+                <h3 className="text-2xl md:text-3xl font-bold text-white leading-tight group-hover:text-blue-200 transition-colors">
+                  {exp.role}
+                </h3>
+                <p className="text-lg text-slate-400 font-light tracking-wide">
+                  {exp.company}
+                </p>
+                <p className="text-slate-400 text-base leading-relaxed font-light">
+                  {exp.description}
+                </p>
               </div>
+
+              {/* Bottom Section: Skills Tags */}
+              <div className="flex flex-wrap gap-2 mt-auto">
+                {exp.skills.map((skill) => (
+                  <span
+                    key={skill}
+                    className="px-3 py-1 bg-white/5 text-slate-400 text-xs font-medium rounded-md border border-slate-800 group-hover:border-slate-700/50 group-hover:text-slate-200 transition-all duration-300"
+                  >
+                    {skill}
+                  </span>
+                ))}
+              </div>
+
             </div>
           </Card>
         ))}
@@ -118,6 +126,7 @@ export function Experience() {
     </Section>
   );
 }
+
 
 export function Education() {
   return (
@@ -219,12 +228,16 @@ export function Projects() {
                 SOURCE
               </a>
 
-              <a
-                href="#"
-                className="flex items-center text-xs font-black tracking-widest text-slate-500 hover:text-white transition-colors pb-1 border-b border-transparent"
-              >
-                LIVE DEMO
-              </a>
+              {project.liveUrl && (
+                <a
+                  href={project.liveUrl}
+                  className="flex items-center text-xs font-black tracking-widest text-slate-400 hover:text-white transition-colors pb-1 border-b border-transparent"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  LIVE DEMO
+                </a>
+              )}
             </div>
           </Card>
         ))}

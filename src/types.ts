@@ -23,6 +23,7 @@ export interface Project {
   description: string;
   techStack: string[];
   githubUrl: string;
+  liveUrl?: string;
   type: 'python' | 'data' | 'web';
 }
 
