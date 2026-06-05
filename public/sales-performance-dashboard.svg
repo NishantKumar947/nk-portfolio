@@ -1,0 +1,98 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+  <title id="title">Sales Performance Dashboard Preview</title>
+  <desc id="desc">A compact sales dashboard with revenue, profit, growth line chart, product bars, sales trends, and region category table.</desc>
+  <rect width="1600" height="900" fill="#f8fafc"/>
+  <g font-family="Inter, Segoe UI, Arial, sans-serif" fill="#0f172a">
+    <text x="58" y="48" font-size="27">KPI</text>
+    <text x="58" y="83" font-size="27">Revenue</text>
+    <text x="68" y="152" font-size="16" fill="#475569">$1,261.52K</text>
+    <text x="436" y="50" font-size="27">KPI</text>
+    <text x="436" y="85" font-size="27">Profit</text>
+    <text x="440" y="120" font-size="16" fill="#475569">$303.82K</text>
+
+    <text x="858" y="44" font-size="28">KPI Growth Rate</text>
+    <line x1="930" y1="84" x2="1544" y2="84" stroke="#e2e8f0"/>
+    <line x1="930" y1="161" x2="1544" y2="161" stroke="#94a3b8" stroke-dasharray="2 3"/>
+    <line x1="930" y1="234" x2="1544" y2="234" stroke="#e2e8f0"/>
+    <polyline points="962,144 1014,224 1070,74 1148,113 1182,220 1244,157 1302,131 1362,177 1424,169 1460,155 1512,169" fill="none" stroke="#4f7fb6" stroke-width="3"/>
+    <g fill="#4f7fb6">
+      <circle cx="962" cy="144" r="4"/><circle cx="1014" cy="224" r="4"/><circle cx="1070" cy="74" r="4"/><circle cx="1148" cy="113" r="4"/><circle cx="1182" cy="220" r="4"/><circle cx="1244" cy="157" r="4"/><circle cx="1302" cy="131" r="4"/><circle cx="1362" cy="177" r="4"/><circle cx="1424" cy="169" r="4"/><circle cx="1460" cy="155" r="4"/><circle cx="1512" cy="169" r="4"/>
+    </g>
+    <g font-size="15" fill="#334155">
+      <text x="930" y="135">10.49%</text>
+      <text x="986" y="226">-41.28%</text>
+      <text x="1042" y="81">57.97%</text>
+      <text x="1124" y="103">30.93%</text>
+      <text x="1150" y="229">-36.54%</text>
+      <text x="1190" y="147">2.20%</text>
+      <text x="1266" y="122">19.53%</text>
+      <text x="1318" y="196">-10.12%</text>
+      <text x="1395" y="188">-4.60%</text>
+      <text x="1438" y="147">3.89%</text>
+      <text x="1488" y="189">-5.14%</text>
+    </g>
+    <text x="890" y="91" font-size="15" transform="rotate(-90 890 91)">% Difference in Sales</text>
+    <text x="1140" y="286" font-size="16">Month of Order Date [2024]</text>
+    <text x="932" y="257" font-size="15" fill="#64748b">February</text>
+    <text x="1051" y="257" font-size="15" fill="#64748b">April</text>
+    <text x="1169" y="257" font-size="15" fill="#64748b">June</text>
+    <text x="1268" y="257" font-size="15" fill="#64748b">August</text>
+    <text x="1394" y="257" font-size="15" fill="#64748b">October</text>
+    <text x="1471" y="257" font-size="15" fill="#64748b">December</text>
+
+    <text x="36" y="326" font-size="28">Sales Trends (Q &amp; Y)</text>
+    <line x1="110" y1="345" x2="110" y2="578" stroke="#cbd5e1"/>
+    <line x1="32" y1="515" x2="724" y2="515" stroke="#cbd5e1"/>
+    <g stroke="#e2e8f0">
+      <line x1="170" y1="365" x2="170" y2="515"/><line x1="247" y1="365" x2="247" y2="515"/><line x1="308" y1="365" x2="308" y2="515"/><line x1="385" y1="365" x2="385" y2="515"/>
+      <line x1="445" y1="365" x2="445" y2="515"/><line x1="523" y1="365" x2="523" y2="515"/><line x1="584" y1="365" x2="584" y2="515"/><line x1="660" y1="365" x2="660" y2="515"/>
+    </g>
+    <g>
+      <rect x="226" y="409" width="16" height="106" fill="#4f7fb6"/>
+      <rect x="364" y="391" width="16" height="124" fill="#f28e2b"/>
+      <rect x="502" y="405" width="16" height="110" fill="#e15759"/>
+      <rect x="640" y="411" width="16" height="104" fill="#76b7b2"/>
+    </g>
+    <g font-size="14" fill="#64748b">
+      <text x="168" y="381">Q1</text><text x="306" y="381">Q2</text><text x="444" y="381">Q3</text><text x="582" y="381">Q4</text>
+      <text x="67" y="416">300K</text><text x="67" y="482">100K</text><text x="75" y="508">0K</text>
+      <text x="162" y="565">Year</text><text x="300" y="565">Year</text><text x="438" y="565">Year</text><text x="576" y="565">Year</text>
+    </g>
+    <text x="357" y="361" font-size="16">Quarter</text>
+    <text x="45" y="477" font-size="15" transform="rotate(-90 45 477)">Sales</text>
+
+    <text x="898" y="350" font-size="28">Product Performance</text>
+    <g font-size="15" fill="#64748b">
+      <text x="922" y="401">Sneakers</text><text x="918" y="421">Bookcase</text><text x="906" y="444">Office Chair</text><text x="944" y="464">Jacket</text><text x="909" y="485">Headphones</text><text x="953" y="506">Sofa</text><text x="909" y="527">Paper Pack</text><text x="937" y="548">Binder</text>
+    </g>
+    <g fill="#4f7fb6">
+      <rect x="994" y="391" width="484" height="15"/><rect x="994" y="411" width="420" height="15"/><rect x="994" y="432" width="398" height="15"/><rect x="994" y="452" width="396" height="15"/>
+      <rect x="994" y="472" width="375" height="15"/><rect x="994" y="493" width="361" height="15"/><rect x="994" y="513" width="356" height="15"/><rect x="994" y="534" width="354" height="15"/>
+    </g>
+    <g stroke="#e2e8f0">
+      <line x1="994" y1="390" x2="994" y2="540"/><line x1="1126" y1="390" x2="1126" y2="540"/><line x1="1258" y1="390" x2="1258" y2="540"/><line x1="1390" y1="390" x2="1390" y2="540"/>
+    </g>
+    <rect x="1504" y="388" width="18" height="150" fill="#e5e7eb"/><rect x="1510" y="405" width="4" height="68" fill="#737373"/>
+    <text x="995" y="562" font-size="15" fill="#64748b">0K</text><text x="1024" y="562" font-size="15" fill="#64748b">10K</text><text x="1156" y="562" font-size="15" fill="#64748b">40K</text><text x="1288" y="562" font-size="15" fill="#64748b">70K</text><text x="1420" y="562" font-size="15" fill="#64748b">100K</text>
+    <text x="1204" y="589" font-size="16">Sales</text>
+    <rect x="1174" y="628" width="150" height="16" fill="url(#salesGradient)"/>
+    <text x="1175" y="661" font-size="15" fill="#64748b">4,935</text><text x="1275" y="661" font-size="15" fill="#64748b">95,860</text>
+
+    <text x="452" y="632" font-size="28">Region &amp; Category Sales</text>
+    <g font-size="15">
+      <text x="454" y="687">Category</text><text x="580" y="687">East</text><text x="635" y="687">North</text><text x="696" y="669">Region</text><text x="690" y="687">South</text><text x="745" y="687">Unkno..</text><text x="825" y="687">West</text>
+      <rect x="566" y="693" width="60" height="20" fill="#4f9db5"/><rect x="626" y="693" width="60" height="20" fill="#3f84a1"/><rect x="686" y="693" width="60" height="20" fill="#4c9fbb"/><rect x="746" y="693" width="60" height="20" fill="#a5cfc8"/><rect x="806" y="693" width="60" height="20" fill="#428eaa"/>
+      <rect x="566" y="713" width="60" height="20" fill="#3a8faf"/><rect x="626" y="713" width="60" height="20" fill="#5fa8bf"/><rect x="686" y="713" width="60" height="20" fill="#4c9fbb"/><rect x="746" y="713" width="60" height="20" fill="#75b8bb"/><rect x="806" y="713" width="60" height="20" fill="#5ea9bd"/>
+      <rect x="566" y="733" width="60" height="20" fill="#6eb5c3"/><rect x="626" y="733" width="60" height="20" fill="#72b7c5"/><rect x="686" y="733" width="60" height="20" fill="#5baabd"/><rect x="746" y="733" width="60" height="20" fill="#9ccbc6"/><rect x="806" y="733" width="60" height="20" fill="#3c84a2"/>
+      <rect x="566" y="753" width="60" height="20" fill="#3d8ead"/><rect x="626" y="753" width="60" height="20" fill="#367f9e"/><rect x="686" y="753" width="60" height="20" fill="#4b9fbb"/><rect x="746" y="753" width="60" height="20" fill="#b4d8cf"/><rect x="806" y="753" width="60" height="20" fill="#5aa7bc"/>
+      <g fill="#0f172a"><text x="454" y="708">Clothing</text><text x="454" y="728">Electronics</text><text x="454" y="748">Furniture</text><text x="454" y="768">Office Supplies</text></g>
+      <g fill="#ffffff" font-size="14"><text x="574" y="708">70,942</text><text x="633" y="708">92,872</text><text x="693" y="708">81,112</text><text x="754" y="708">10,397</text><text x="815" y="708">84,952</text><text x="574" y="728">66,985</text><text x="633" y="728">84,023</text><text x="693" y="728">69,944</text><text x="754" y="728">4,935</text><text x="815" y="728">68,884</text></g>
+    </g>
+  </g>
+  <defs>
+    <linearGradient id="salesGradient" x1="0" x2="1">
+      <stop offset="0" stop-color="#b7d7d0"/>
+      <stop offset="1" stop-color="#24527c"/>
+    </linearGradient>
+  </defs>
+</svg>

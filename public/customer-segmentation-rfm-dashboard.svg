@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1657 853" role="img" aria-labelledby="title desc">
+  <title id="title">RFM Analysis Dashboard</title>
+  <desc id="desc">Customer distribution bars, recency versus monetary scatter plot, and revenue contribution bubble.</desc>
+  <rect width="1657" height="853" fill="#fbfbfb"/>
+  <g font-family="Inter, Segoe UI, Arial, sans-serif" fill="#0f172a">
+    <text x="735" y="43" font-size="31" font-weight="700">RFM Analysis</text>
+    <rect x="9" y="55" width="1484" height="396" fill="#fff" stroke="#444" stroke-width="1.5"/>
+    <text x="19" y="88" font-size="27" font-weight="700">Customer Distribution by Segment</text>
+    <line x1="90" y1="124" x2="90" y2="408" stroke="#cbd5e1"/>
+    <line x1="90" y1="408" x2="1487" y2="408" stroke="#cbd5e1"/>
+    <g stroke="#edf2f7">
+      <line x1="90" y1="134" x2="1487" y2="134"/><line x1="90" y1="180" x2="1487" y2="180"/><line x1="90" y1="225" x2="1487" y2="225"/><line x1="90" y1="271" x2="1487" y2="271"/><line x1="90" y1="317" x2="1487" y2="317"/><line x1="90" y1="362" x2="1487" y2="362"/>
+      <line x1="372" y1="124" x2="372" y2="418"/><line x1="650" y1="124" x2="650" y2="418"/><line x1="928" y1="124" x2="928" y2="418"/><line x1="1207" y1="124" x2="1207" y2="418"/>
+    </g>
+    <text x="759" y="121" font-size="16">Segment</text>
+    <g>
+      <rect x="127" y="234" width="209" height="174" fill="#cfd9e3"/>
+      <rect x="406" y="195" width="209" height="213" fill="#f2dfc9"/>
+      <rect x="685" y="281" width="211" height="127" fill="#e15759" stroke="#111827" stroke-width="2"/>
+      <rect x="964" y="179" width="210" height="229" fill="#d7e6e4"/>
+      <rect x="1244" y="159" width="209" height="249" fill="#d7e7d4"/>
+    </g>
+    <g font-size="15" fill="#64748b">
+      <text x="49" y="141">1200</text><text x="49" y="187">1000</text><text x="56" y="233">800</text><text x="56" y="278">600</text><text x="56" y="324">400</text><text x="56" y="369">200</text><text x="77" y="401">0</text>
+      <text x="207" y="425">At Risk</text><text x="476" y="425">Champions</text><text x="756" y="425">Lost Customers</text><text x="1012" y="425">Loyal Customers</text><text x="1292" y="425">Promising / New</text>
+    </g>
+    <g font-size="15" fill="#c4c4c4">
+      <text x="218" y="226">759</text><text x="496" y="187">934</text><text x="777" y="275" fill="#334155">545</text><text x="1049" y="171">1,008</text><text x="1328" y="152">1,092</text>
+    </g>
+    <text x="29" y="330" font-size="15" transform="rotate(-90 29 330)">Count of rfm_scored_data.csv</text>
+
+    <rect x="1493" y="55" width="20" height="85" fill="#666"/>
+    <text x="1497" y="70" font-size="17" fill="#fff">×</text>
+    <g font-size="16">
+      <text x="1497" y="76">Segment</text>
+      <rect x="1498" y="87" width="14" height="14" fill="#cfd9e3"/><text x="1519" y="100" fill="#64748b">At Risk</text>
+      <rect x="1498" y="108" width="14" height="14" fill="#f2dfc9"/><text x="1519" y="121" fill="#64748b">Champions</text>
+      <rect x="1498" y="129" width="14" height="14" fill="#e15759"/><text x="1519" y="142" fill="#64748b">Lost Customers</text>
+      <rect x="1498" y="150" width="14" height="14" fill="#75b7b2"/><text x="1519" y="163" fill="#64748b">Loyal Customers</text>
+      <rect x="1498" y="171" width="14" height="14" fill="#59a35b"/><text x="1519" y="184" fill="#64748b">Promising / New</text>
+      <text x="1498" y="211">Frequency</text>
+      <rect x="1500" y="219" width="80" height="18" fill="#d1d1d1"/><text x="1585" y="233" fill="#64748b">550</text>
+    </g>
+
+    <text x="19" y="482" font-size="27" font-weight="700">Recency vs Monetary (Behavior Scatter)</text>
+    <line x1="92" y1="501" x2="92" y2="766" stroke="#cbd5e1"/>
+    <line x1="92" y1="766" x2="829" y2="766" stroke="#cbd5e1"/>
+    <g stroke="#edf2f7">
+      <line x1="92" y1="510" x2="829" y2="510"/><line x1="92" y1="561" x2="829" y2="561"/><line x1="92" y1="613" x2="829" y2="613"/><line x1="92" y1="664" x2="829" y2="664"/><line x1="92" y1="715" x2="829" y2="715"/>
+      <line x1="137" y1="501" x2="137" y2="766"/><line x1="182" y1="501" x2="182" y2="766"/><line x1="226" y1="501" x2="226" y2="766"/><line x1="271" y1="501" x2="271" y2="766"/><line x1="315" y1="501" x2="315" y2="766"/><line x1="360" y1="501" x2="360" y2="766"/><line x1="404" y1="501" x2="404" y2="766"/><line x1="449" y1="501" x2="449" y2="766"/><line x1="493" y1="501" x2="493" y2="766"/><line x1="537" y1="501" x2="537" y2="766"/><line x1="582" y1="501" x2="582" y2="766"/><line x1="626" y1="501" x2="626" y2="766"/><line x1="671" y1="501" x2="671" y2="766"/><line x1="715" y1="501" x2="715" y2="766"/><line x1="760" y1="501" x2="760" y2="766"/>
+    </g>
+    <g fill="none" stroke="#ef4444" stroke-width="2">
+      <circle cx="127" cy="689" r="5"/><circle cx="134" cy="718" r="5"/><circle cx="143" cy="651" r="5"/><circle cx="151" cy="700" r="5"/><circle cx="163" cy="674" r="5"/><circle cx="174" cy="716" r="5"/><circle cx="183" cy="657" r="5"/><circle cx="193" cy="703" r="5"/><circle cx="203" cy="681" r="5"/><circle cx="213" cy="633" r="5"/><circle cx="224" cy="713" r="5"/><circle cx="235" cy="667" r="5"/><circle cx="247" cy="735" r="5"/><circle cx="258" cy="642" r="5"/><circle cx="269" cy="700" r="5"/><circle cx="282" cy="681" r="5"/><circle cx="294" cy="722" r="5"/><circle cx="307" cy="651" r="5"/>
+      <circle cx="358" cy="607" r="5"/><circle cx="365" cy="646" r="5"/><circle cx="374" cy="548" r="5"/><circle cx="382" cy="673" r="5"/><circle cx="392" cy="532" r="5"/><circle cx="400" cy="610" r="5"/><circle cx="410" cy="696" r="5"/><circle cx="419" cy="536" r="5"/><circle cx="428" cy="579" r="5"/><circle cx="438" cy="662" r="5"/><circle cx="448" cy="531" r="5"/><circle cx="459" cy="604" r="5"/><circle cx="468" cy="682" r="5"/><circle cx="479" cy="545" r="5"/><circle cx="488" cy="626" r="5"/><circle cx="497" cy="710" r="5"/><circle cx="507" cy="520" r="5"/><circle cx="516" cy="593" r="5"/><circle cx="526" cy="670" r="5"/><circle cx="536" cy="518" r="5"/><circle cx="546" cy="622" r="5"/><circle cx="556" cy="701" r="5"/><circle cx="566" cy="541" r="5"/><circle cx="576" cy="614" r="5"/><circle cx="586" cy="689" r="5"/><circle cx="597" cy="526" r="5"/><circle cx="607" cy="640" r="5"/><circle cx="617" cy="718" r="5"/><circle cx="627" cy="559" r="5"/><circle cx="638" cy="622" r="5"/><circle cx="648" cy="704" r="5"/><circle cx="659" cy="520" r="5"/><circle cx="669" cy="604" r="5"/><circle cx="680" cy="676" r="5"/><circle cx="691" cy="547" r="5"/><circle cx="702" cy="632" r="5"/>
+      <circle cx="742" cy="576" r="5"/><circle cx="752" cy="655" r="5"/><circle cx="762" cy="707" r="5"/><circle cx="772" cy="535" r="5"/><circle cx="782" cy="621" r="5"/><circle cx="792" cy="682" r="5"/><circle cx="802" cy="516" r="5"/><circle cx="812" cy="588" r="5"/><circle cx="787" cy="744" r="5"/><circle cx="374" cy="704" r="5"/><circle cx="614" cy="584" r="5"/><circle cx="334" cy="705" r="5"/><circle cx="585" cy="572" r="5"/><circle cx="455" cy="743" r="5"/><circle cx="660" cy="746" r="5"/><circle cx="520" cy="746" r="5"/><circle cx="735" cy="618" r="5"/>
+    </g>
+    <g font-size="15" fill="#64748b">
+      <text x="49" y="516">500</text><text x="49" y="566">400</text><text x="49" y="618">300</text><text x="49" y="669">200</text><text x="49" y="721">100</text><text x="66" y="770">0</text>
+      <text x="84" y="802">60</text><text x="128" y="802">80</text><text x="168" y="802">100</text><text x="213" y="802">120</text><text x="257" y="802">140</text><text x="301" y="802">160</text><text x="346" y="802">180</text><text x="390" y="802">200</text><text x="435" y="802">220</text><text x="479" y="802">240</text><text x="523" y="802">260</text><text x="568" y="802">280</text><text x="612" y="802">300</text><text x="657" y="802">320</text><text x="701" y="802">340</text><text x="745" y="802">360</text><text x="790" y="802">380</text>
+    </g>
+    <text x="425" y="831" font-size="16">Recency</text>
+    <text x="31" y="655" font-size="16" transform="rotate(-90 31 655)">Monetary</text>
+
+    <text x="840" y="482" font-size="27" font-weight="700">Revenue Contribution % by Segment</text>
+    <circle cx="1242" cy="671" r="86" fill="#e15759"/>
+    <text x="1187" y="775" font-size="16">Lost Customers</text>
+    <text x="1214" y="798" font-size="16">104,951</text>
+  </g>
+</svg>

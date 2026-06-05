@@ -88,26 +88,41 @@ export const EDUCATION: Education[] = [
 export const PROJECTS: Project[] = [
   {
     id: '1',
+    title: 'Personal Portfolio Website',
+    description: 'A modern, highly responsive personal portfolio built with Vite and React to showcase my engineering journey, integrating structured SQL analytics with clean, optimized frontend architecture.',
+    techStack: ['REACT', 'TAILWIND CSS', 'NODE JS', 'SQL'],
+    githubUrl: 'https://github.com/NishantKumar947/nk-portfolio',
+    liveUrl: 'https://nk-portfolio-rivp.vercel.app/',
+    imageUrl: '/portfolio-website.svg',
+    type: 'web',
+    // include live demo link where the UI uses `project.githubUrl` for SOURCE; Sections.tsx will open this in a new tab
+    // we keep live demo accessible by adding a separate field if needed later
+  },
+  {
+    id: '2',
     title: 'Sales Performance Dashboard',
     description: 'An interactive analytics dashboard that cleans raw sales data to track seasonal revenue trends, identify high-performing products, and deliver region-wise KPIs for data-driven business growth.',
     techStack: ['POWER BI', 'TABLEAU', 'DATA CLEANING', 'KPI REPORTING'],
     githubUrl: 'https://github.com/NishantKumar947/Syntecxhub_Sales_Performance_Dashboard',
+    imageUrl: '/sales-performance-dashboard.svg',
     type: 'data'
   },
   {
-    id: '4',
+    id: '3',
     title: 'Student Performance Analysis',
     description: 'A data analytics project focused on preprocessing student academic records to evaluate subject-wise trends and correlate key factors like attendance and study hours to optimize academic results.',
     techStack: ['DATA ANALYSIS', 'EXCEL', 'STATISTICS', 'DATA VISUALIZATION'],
     githubUrl: 'https://github.com/NishantKumar947/Syntecxhub_Student_Performance_Analysis',
+    imageUrl: '/student-performance-dashboard.svg',
     type: 'data'
   },
   {
-    id: '2',
+    id: '4',
     title: 'Website Traffic Analytics',
     description: 'A digital analytics project that evaluates web traffic datasets to trace user acquisition channels, audit engagement metrics, and pinpoint conversion bottlenecks to optimize platform performance.',
     techStack: ['WEB ANALYTICS', 'DASHBOARDS', 'FUNNEL TRACKING', 'GOOGLE BI'],
     githubUrl: 'https://github.com/NishantKumar947/syntechhub-web-traffic-analytics',
+    imageUrl: '/website-traffic-dashboard.svg',
     type: 'data'
   },
   {
@@ -116,6 +131,7 @@ export const PROJECTS: Project[] = [
     description: 'A behavioral analytics project that processes raw transactional logs to compute RFM metrics, segmenting customer lifecycles into distinct cohorts to drive targeted marketing and retention strategies.',
     techStack: ['PYTHON', 'SQL', 'RFM MODELING', 'MARKETING BI'],
     githubUrl: 'https://github.com/NishantKumar947/SyntechHub-Customer-Segmentation-RFM',
+    imageUrl: '/customer-segmentation-rfm-dashboard.svg',
     type: 'data'
   },
   {
@@ -125,33 +141,6 @@ export const PROJECTS: Project[] = [
     techStack: ['DATA ANALYSIS', 'E-COMMERCE BI', 'GEO ANALYSIS', 'VISUALIZATION'],
     githubUrl: 'https://github.com/NishantKumar947/Amazon-Sales-Data-Analysis',
     type: 'data'
-  },
-  {
-    id: '7',
-    title: 'Personal Portfolio Website',
-    description: 'A modern, highly responsive personal portfolio built with Vite and React to showcase my engineering journey, integrating structured SQL analytics with clean, optimized frontend architecture.',
-    techStack: ['REACT', 'TAILWIND CSS', 'NODE JS', 'SQL'],
-    githubUrl: 'https://github.com/NishantKumar947/nk-portfolio',
-    liveUrl: 'https://nk-portfolio-rivp.vercel.app/',
-    type: 'web',
-    // include live demo link where the UI uses `project.githubUrl` for SOURCE; Sections.tsx will open this in a new tab
-    // we keep live demo accessible by adding a separate field if needed later
-  },
-  {
-    id: '2',
-    title: 'ChurnVision Dashboard',
-    description: 'A comprehensive analytics dashboard for subscription-based businesses, visualizing churn probability and customer lifetime value metrics.',
-    techStack: ['Python', 'SQL', 'Streamlit', 'Scikit-learn'],
-    githubUrl: '#',
-    type: 'data'
-  },
-  {
-    id: '3',
-    title: 'Modern Retailer Hub',
-    description: 'A fast, SEO-optimized e-commerce storefront with dynamic product filtering, persistent cart state, and a clean minimalist UI/UX.',
-    techStack: ['Next.js', 'TypeScript', 'Tailwind', 'Framermotion'],
-    githubUrl: '#',
-    type: 'web'
   }
 ];
 

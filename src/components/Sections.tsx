@@ -1,14 +1,35 @@
 import { Section, Card } from './Layout';
 import { EDUCATION, EXPERIENCES, PROJECTS, SKILL_CATEGORIES } from '../constants/content';
-import { Github, Mail, Linkedin, Send, Download, GraduationCap, Calendar } from 'lucide-react';
+import { Github, Mail, Linkedin, Send, Download, GraduationCap, Calendar, Code2, ChartNoAxesCombined, Lightbulb, ChevronDown, ChevronUp } from 'lucide-react';
 import { motion } from 'motion/react';
+import { useState, type ChangeEvent, type FormEvent } from 'react';
 
 const RESUME_URL = '/resume.pdf';
+const CONTACT_EMAIL = 'nishantkumar3189@gmail.com';
+const CONTACT_ENDPOINT = `https://formsubmit.co/ajax/${CONTACT_EMAIL}`;
+
+const ABOUT_CARDS = [
+  {
+    title: 'Product Developer',
+    description: 'Building responsive web apps and portfolio solutions.',
+    icon: Code2,
+  },
+  {
+    title: 'Data & Analytics',
+    description: 'Creating useful dashboards, reports, and insights.',
+    icon: ChartNoAxesCombined,
+  },
+  {
+    title: 'Problem Solver',
+    description: 'Solving real work problems with clean, practical tech.',
+    icon: Lightbulb,
+  },
+];
 
 export function About() {
   return (
     <Section id="about" title="About Me">
-      <div className="grid lg:grid-cols-2 gap-16 items-center">
+      <div className="grid lg:grid-cols-[0.9fr_1.25fr] gap-16 items-center">
         <motion.div
           initial={{ opacity: 0, scale: 0.95 }}
           whileInView={{ opacity: 1, scale: 1 }}
@@ -33,29 +54,44 @@ export function About() {
               real-world solutions.
             </h3>
             <p className="text-slate-400 text-lg md:text-xl leading-relaxed font-light">
-              I enjoy building things that actually
-              <span className="text-white font-normal"> solve problems.</span> Whether it’s working with
+              I&apos;m an MCA student who enjoys building things that actually
+              <span className="text-white font-normal"> solve problems.</span> Whether it&apos;s working with
               <span className="text-white font-normal"> data, writing backend logic,</span> or <span className="text-white font-normal">creating web interfaces.</span> I focus on keeping things
-              <span className="text-white font-normal"> simple, practical,</span>  and <span className="text-white font-normal">useful.</span>
+              <span className="text-white font-normal"> simple, practical,</span> and <span className="text-white font-normal">useful.</span>
             </p>
           </div>
 
-          <div className="grid sm:grid-cols-2 gap-8">
-            <div className="space-y-3">
-              <div className="w-12 h-1 bg-white" />
-              <h4 className="text-white font-semibold flex items-center gap-2">Development</h4>
-              <p className="text-slate-500 text-sm leading-relaxed">
-                Building applications using Python and modern web technologies like React and Node.js.
-              </p>
-            </div>
+          <div className="grid sm:grid-cols-3 gap-6">
+            {ABOUT_CARDS.map(({ title, description, icon: Icon }, i) => (
+              <motion.div
+                key={title}
+                initial={{ opacity: 0, y: 18 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: i * 0.1, ease: [0.16, 1, 0.3, 1] }}
+                className="group relative overflow-hidden rounded-xl border border-slate-800/70 bg-slate-900/55 p-5 shadow-lg shadow-black/20 ring-1 ring-white/5 backdrop-blur-xl transition-all duration-500 hover:-translate-y-2 hover:border-blue-400/40 hover:bg-slate-900/85 hover:shadow-2xl hover:shadow-blue-950/30"
+              >
+                <div className="absolute inset-x-5 top-0 h-px bg-gradient-to-r from-transparent via-white/25 to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
+                <div className="absolute -right-8 -top-8 h-24 w-24 rounded-full bg-blue-500/10 blur-2xl opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
 
-            <div className="space-y-3">
-              <div className="w-12 h-1 bg-slate-700" />
-              <h4 className="text-white font-semibold">Analytics</h4>
-              <p className="text-slate-500 text-sm leading-relaxed">
-                Working with data using SQL and Python to find insights and create simple, useful dashboards.
-              </p>
-            </div>
+                <div className="relative z-10 flex h-full flex-col">
+                  <div className="mb-6 flex h-11 w-11 items-center justify-center rounded-xl border border-slate-700/70 bg-slate-950/50 text-slate-300 transition-all duration-500 group-hover:-rotate-6 group-hover:scale-110 group-hover:border-blue-400/50 group-hover:bg-blue-500/10 group-hover:text-blue-200">
+                    <Icon className="h-5 w-5" />
+                  </div>
+
+                  <h4 className="mb-3 text-lg font-bold leading-tight text-white transition-colors duration-300 group-hover:text-blue-100">
+                    {title}
+                  </h4>
+                  <p className="text-sm leading-relaxed text-slate-500 transition-colors duration-300 group-hover:text-slate-300">
+                    {description}
+                  </p>
+
+                  <div className="mt-auto pt-5">
+                    <div className="h-1 w-10 rounded-full bg-slate-700 transition-all duration-500 group-hover:w-16 group-hover:bg-blue-400" />
+                  </div>
+                </div>
+              </motion.div>
+            ))}
           </div>
         </div>
       </div>
@@ -64,6 +100,10 @@ export function About() {
 }
 
 export function Experience() {
+  const [showAll, setShowAll] = useState(false);
+  const visibleExperiences = showAll ? EXPERIENCES : EXPERIENCES.slice(0, 2);
+  const hiddenCount = EXPERIENCES.length - visibleExperiences.length;
+
   return (
     <Section
       id="experience"
@@ -71,7 +111,7 @@ export function Experience() {
       subtitle="A record of professional contributions where I've applied technical solutions to business challenges."
     >
       <div className="grid md:grid-cols-2 gap-8">
-        {EXPERIENCES.map((exp, i) => (
+        {visibleExperiences.map((exp, i) => (
           <Card key={exp.id} delay={i * 0.15} className="group relative overflow-hidden h-full flex flex-col justify-between">
 
             {/* 1. Background Index Number (Fixed Tag Closing Here) */}
@@ -125,6 +165,23 @@ export function Experience() {
           </Card>
         ))}
       </div>
+
+      {EXPERIENCES.length > 2 && (
+        <div className="mt-12 flex justify-center">
+          <button
+            type="button"
+            onClick={() => setShowAll((current) => !current)}
+            className="group inline-flex items-center justify-center rounded-full border border-slate-800 bg-slate-900/70 px-7 py-3 text-sm font-bold text-white shadow-lg shadow-black/20 transition-all duration-300 hover:-translate-y-1 hover:border-blue-400/50 hover:bg-slate-800 hover:text-blue-100 hover:shadow-blue-950/30"
+          >
+            {showAll ? 'Show less' : `Show more ${hiddenCount ? `(${hiddenCount})` : ''}`}
+            {showAll ? (
+              <ChevronUp className="ml-2 h-4 w-4 transition-transform duration-300 group-hover:-translate-y-0.5" />
+            ) : (
+              <ChevronDown className="ml-2 h-4 w-4 transition-transform duration-300 group-hover:translate-y-0.5" />
+            )}
+          </button>
+        </div>
+      )}
     </Section>
   );
 }
@@ -179,6 +236,10 @@ export function Education() {
 }
 
 export function Projects() {
+  const [showAll, setShowAll] = useState(false);
+  const visibleProjects = showAll ? PROJECTS : PROJECTS.slice(0, 3);
+  const hiddenCount = PROJECTS.length - visibleProjects.length;
+
   return (
     <Section
       id="projects"
@@ -186,21 +247,31 @@ export function Projects() {
       subtitle="Technically focused implementations demonstrating versatility across my three primary domains."
     >
       <div className="grid md:grid-cols-3 gap-8">
-        {PROJECTS.map((project, i) => (
+        {visibleProjects.map((project, i) => (
           <Card
             key={project.id}
             delay={i * 0.1}
             className="flex flex-col h-full group border-b-4 border-b-slate-800 hover:border-b-blue-500/50 transition-all"
           >
-            <div className="mb-8 aspect-[16/10] bg-[#0f172a] rounded-xl flex flex-col items-center justify-center p-6 border border-slate-800/50 group-hover:bg-[#1e293b]/50 transition-colors shadow-inner">
-              <div className="w-12 h-12 mb-4 text-slate-600 group-hover:text-blue-400 transition-colors">
-                {project.type === 'python' && <div className="text-4xl font-mono opacity-80">Py</div>}
-                {project.type === 'data' && <div className="text-4xl opacity-80">📊</div>}
-                {project.type === 'web' && <div className="text-4xl font-bold opacity-80">{'</>'}</div>}
-              </div>
-              <span className="text-[10px] text-slate-500 font-bold uppercase tracking-[0.3em]">
-                {project.type === 'python' ? 'Automation' : project.type === 'data' ? 'Analytics' : 'Interface'}
-              </span>
+            <div className="mb-8 aspect-[16/10] overflow-hidden bg-[#0f172a] rounded-xl flex flex-col items-center justify-center border border-slate-800/50 group-hover:bg-[#1e293b]/50 transition-colors shadow-inner">
+              {project.imageUrl ? (
+                <img
+                  src={project.imageUrl}
+                  alt={`${project.title} preview`}
+                  className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+                />
+              ) : (
+                <div className="flex h-full w-full flex-col items-center justify-center p-6">
+                  <div className="w-12 h-12 mb-4 text-slate-600 group-hover:text-blue-400 transition-colors">
+                    {project.type === 'python' && <div className="text-4xl font-mono opacity-80">Py</div>}
+                    {project.type === 'data' && <div className="text-4xl opacity-80">📊</div>}
+                    {project.type === 'web' && <div className="text-4xl font-bold opacity-80">{'</>'}</div>}
+                  </div>
+                  <span className="text-[10px] text-slate-500 font-bold uppercase tracking-[0.3em]">
+                    {project.type === 'python' ? 'Automation' : project.type === 'data' ? 'Analytics' : 'Interface'}
+                  </span>
+                </div>
+              )}
             </div>
 
             <h3 className="text-2xl font-bold text-white mb-4 leading-tight">{project.title}</h3>
@@ -244,6 +315,23 @@ export function Projects() {
           </Card>
         ))}
       </div>
+
+      {PROJECTS.length > 3 && (
+        <div className="mt-12 flex justify-center">
+          <button
+            type="button"
+            onClick={() => setShowAll((current) => !current)}
+            className="group inline-flex items-center justify-center rounded-full border border-slate-800 bg-slate-900/70 px-7 py-3 text-sm font-bold text-white shadow-lg shadow-black/20 transition-all duration-300 hover:-translate-y-1 hover:border-blue-400/50 hover:bg-slate-800 hover:text-blue-100 hover:shadow-blue-950/30"
+          >
+            {showAll ? 'Show less' : `Show more ${hiddenCount ? `(${hiddenCount})` : ''}`}
+            {showAll ? (
+              <ChevronUp className="ml-2 h-4 w-4 transition-transform duration-300 group-hover:-translate-y-0.5" />
+            ) : (
+              <ChevronDown className="ml-2 h-4 w-4 transition-transform duration-300 group-hover:translate-y-0.5" />
+            )}
+          </button>
+        </div>
+      )}
     </Section>
   );
 }
@@ -306,6 +394,53 @@ export function Resume() {
 }
 
 export function Contact() {
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    message: '',
+  });
+  const [submitState, setSubmitState] = useState<'idle' | 'sending' | 'success' | 'error'>('idle');
+
+  const handleContactChange = (event: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { name, value } = event.target;
+    setFormData((current) => ({ ...current, [name]: value }));
+    if (submitState !== 'idle') {
+      setSubmitState('idle');
+    }
+  };
+
+  const handleContactSubmit = async (event: FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    setSubmitState('sending');
+
+    try {
+      const response = await fetch(CONTACT_ENDPOINT, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          Accept: 'application/json',
+        },
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          message: formData.message,
+          _subject: `New portfolio message from ${formData.name}`,
+          _template: 'table',
+          _captcha: 'false',
+        }),
+      });
+
+      if (!response.ok) {
+        throw new Error('Message failed');
+      }
+
+      setSubmitState('success');
+      setFormData({ name: '', email: '', message: '' });
+    } catch {
+      setSubmitState('error');
+    }
+  };
+
   return (
     <Section id="contact" title="Get In Touch" subtitle="Have a project in mind or just want to say hi? My inbox is always open.">
       <div className="grid md:grid-cols-3 gap-12">
@@ -373,13 +508,17 @@ export function Contact() {
         </div>
 
         <div className="md:col-span-2">
-          <form className="space-y-4" onSubmit={(e) => e.preventDefault()}>
+          <form className="space-y-4" onSubmit={handleContactSubmit}>
             <div className="grid sm:grid-cols-2 gap-4">
               <div className="space-y-2">
                 <label className="text-xs text-zinc-500 uppercase tracking-widest ml-1">Name</label>
                 <input
                   type="text"
+                  name="name"
+                  value={formData.name}
+                  onChange={handleContactChange}
                   placeholder="John Doe"
+                  required
                   className="w-full bg-zinc-950 border border-zinc-800 rounded-xl px-4 py-3 text-white placeholder:text-zinc-700 focus:border-zinc-500 focus:outline-none transition-colors"
                 />
               </div>
@@ -388,7 +527,11 @@ export function Contact() {
                 <label className="text-xs text-zinc-500 uppercase tracking-widest ml-1">Email</label>
                 <input
                   type="email"
+                  name="email"
+                  value={formData.email}
+                  onChange={handleContactChange}
                   placeholder="john@example.com"
+                  required
                   className="w-full bg-zinc-950 border border-zinc-800 rounded-xl px-4 py-3 text-white placeholder:text-zinc-700 focus:border-zinc-500 focus:outline-none transition-colors"
                 />
               </div>
@@ -397,14 +540,33 @@ export function Contact() {
             <div className="space-y-2">
               <label className="text-xs text-zinc-500 uppercase tracking-widest ml-1">Message</label>
               <textarea
+                name="message"
+                value={formData.message}
+                onChange={handleContactChange}
                 rows={5}
                 placeholder="How can I help you?"
+                required
                 className="w-full bg-zinc-950 border border-zinc-800 rounded-xl px-4 py-3 text-white placeholder:text-zinc-700 focus:border-zinc-500 focus:outline-none transition-colors resize-none"
               />
             </div>
 
-            <button className="w-full py-4 bg-zinc-100 text-black font-bold rounded-xl hover:bg-white transition-all flex items-center justify-center group">
-              Send Message
+            {submitState === 'success' && (
+              <p className="rounded-xl border border-emerald-500/20 bg-emerald-500/10 px-4 py-3 text-sm font-medium text-emerald-300">
+                Message sent successfully. I&apos;ll get back to you soon.
+              </p>
+            )}
+            {submitState === 'error' && (
+              <p className="rounded-xl border border-red-500/20 bg-red-500/10 px-4 py-3 text-sm font-medium text-red-300">
+                Message could not be sent. Please try again or email me directly.
+              </p>
+            )}
+
+            <button
+              type="submit"
+              disabled={submitState === 'sending'}
+              className="w-full py-4 bg-zinc-100 text-black font-bold rounded-xl hover:bg-white transition-all flex items-center justify-center group disabled:cursor-not-allowed disabled:opacity-60"
+            >
+              {submitState === 'sending' ? 'Sending...' : 'Send Message'}
               <Send className="ml-2 w-4 h-4 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
             </button>
           </form>
